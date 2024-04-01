@@ -1,7 +1,16 @@
-import "./App.css";
+import "./styles/style.sass";
+import "./styles/navbar.sass";
+import "./styles/main.sass";
+import Navbar from "./components/Navbar";
+import Main from "./components/Main";
 
 function App() {
-    return <></>;
+    return (
+        <>
+            <Navbar />
+            <Main />
+        </>
+    );
 }
 
 export default App;
