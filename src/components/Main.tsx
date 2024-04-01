@@ -18,38 +18,25 @@ const Main = () => {
             id: 3,
         },
     ];
-    // useEffect(() => {
-    //     const onScroll = (event) => {
-    //         if (event.deltaY < 0) {
-    //             console.log("scrolling up");
-    //             setActiveIndex(activeIndex - 1);
-    //         } else if (event.deltaY > 0) {
-    //             console.log("scrolling down");
-    //             setActiveIndex(activeIndex + 1);
-    //         }
-    //         console.log(activeIndex);
-    //     };
-    //     // clean up code
-    //     window.removeEventListener("wheel", onScroll);
-    //     window.addEventListener("wheel", onScroll, { passive: true });
-    //     return () => window.removeEventListener("wheel", onScroll);
-    // }, []);
-    const onScroll = (event) => {
-        if (event.deltaY < 0) {
-            if (activeIndex === 1) return;
-            console.log("scrolling up");
-            setActiveIndex(activeIndex - 1);
-        } else if (event.deltaY > 0) {
-            if (activeIndex === images.length) return;
-            console.log("scrolling down");
-            setActiveIndex(activeIndex + 1);
-        }
-        console.log(activeIndex);
-    };
+
     useEffect(() => {
-        onScroll(event);
+        const onScroll = (event) => {
+            if (event.deltaY < 0) {
+                if (activeIndex === 1) return;
+                console.log("scrolling up");
+                setActiveIndex((prevActiveIndex) => prevActiveIndex - 1);
+            } else if (event.deltaY > 0) {
+                if (activeIndex === images.length) return;
+                console.log("scrolling down");
+                setActiveIndex((prevActiveIndex) => prevActiveIndex + 1);
+            }
+            console.log(activeIndex);
+        };
+        window.addEventListener("wheel", onScroll);
+        return () => {
+            window.removeEventListener("wheel", onScroll);
+        };
     }, [activeIndex]);
-    window.addEventListener("wheel", onScroll, { passive: true });
     return (
         <>
             <main className="main">
