@@ -4,6 +4,7 @@ import Portrait2 from "../assets/portrait_2.jpg";
 
 const Main = () => {
     const [activeIndex, setActiveIndex] = useState(1);
+    const [isScrolling, setIsScrolling] = useState(false);
     const images = [
         {
             source: Portrait1,
@@ -21,14 +22,20 @@ const Main = () => {
 
     useEffect(() => {
         const onScroll = (event) => {
-            if (event.deltaY < 0) {
-                if (activeIndex === 1) return;
-                console.log("scrolling up");
-                setActiveIndex((prevActiveIndex) => prevActiveIndex - 1);
-            } else if (event.deltaY > 0) {
-                if (activeIndex === images.length) return;
-                console.log("scrolling down");
-                setActiveIndex((prevActiveIndex) => prevActiveIndex + 1);
+            if (isScrolling === false) {
+                if (event.deltaY < 0) {
+                    if (activeIndex === 1) return;
+                    console.log("scrolling up");
+                    setActiveIndex((prevActiveIndex) => prevActiveIndex - 1);
+                } else if (event.deltaY > 0) {
+                    if (activeIndex === images.length) return;
+                    console.log("scrolling down");
+                    setActiveIndex((prevActiveIndex) => prevActiveIndex + 1);
+                }
+                setIsScrolling(true);
+                setTimeout(() => {
+                    setIsScrolling((isScrolling) => !isScrolling);
+                }, 1000);
             }
             console.log(activeIndex);
         };
@@ -36,21 +43,23 @@ const Main = () => {
         return () => {
             window.removeEventListener("wheel", onScroll);
         };
-    }, [activeIndex]);
+    }, [activeIndex, isScrolling]);
     return (
         <>
+            <div>{"Bool" + isScrolling}</div>
             <main className="main">
                 <ul>
                     {images.map((image) => {
                         return (
                             <li
                                 className={`slide-item ${
-                                    image.id === activeIndex
+                                    image.id <= activeIndex
                                         ? "slide-item--active"
                                         : ""
                                 }`}
                                 key={image.id}
                             >
+                                {" "}
                                 <img src={image.source} alt="" />
                             </li>
                         );
