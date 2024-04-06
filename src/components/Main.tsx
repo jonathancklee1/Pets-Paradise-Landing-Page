@@ -1,22 +1,35 @@
 import { useEffect, useState } from "react";
 import Portrait1 from "../assets/portrait_1.jpg";
 import Portrait2 from "../assets/portrait_2.jpg";
+import Portrait3 from "../assets/portrait_3.jpg";
 
 const Main = () => {
-    const [activeIndex, setActiveIndex] = useState(1);
+    const [activeIndex, setActiveIndex] = useState(0);
     const [isScrolling, setIsScrolling] = useState(false);
-    const images = [
+    const collections = [
         {
-            source: Portrait1,
+            collectionName: "New",
+            img: {
+                imgSrc: Portrait1,
+                imgAlt: "image of portrait-1",
+            },
+            id: 0,
+        },
+        {
+            collectionName: "Coats",
+            img: {
+                imgSrc: Portrait2,
+                imgAlt: "image of portrait-2",
+            },
             id: 1,
         },
         {
-            source: Portrait2,
+            collectionName: "Suits",
+            img: {
+                imgSrc: Portrait3,
+                imgAlt: "image of portrait-3",
+            },
             id: 2,
-        },
-        {
-            source: Portrait1,
-            id: 3,
         },
     ];
 
@@ -24,11 +37,11 @@ const Main = () => {
         const onScroll = (event) => {
             if (isScrolling === false) {
                 if (event.deltaY < 0) {
-                    if (activeIndex === 1) return;
+                    if (activeIndex === 0) return;
                     console.log("scrolling up");
                     setActiveIndex((prevActiveIndex) => prevActiveIndex - 1);
                 } else if (event.deltaY > 0) {
-                    if (activeIndex === images.length) return;
+                    if (activeIndex === collections.length - 1) return;
                     console.log("scrolling down");
                     setActiveIndex((prevActiveIndex) => prevActiveIndex + 1);
                 }
@@ -46,21 +59,28 @@ const Main = () => {
     }, [activeIndex, isScrolling]);
     return (
         <>
-            <div>{"Bool" + isScrolling}</div>
             <main className="main">
+                <div
+                    className="slide-item--category"
+                    key={collections[activeIndex].id}
+                >
+                    // {collections[activeIndex].collectionName}
+                </div>
                 <ul>
-                    {images.map((image) => {
+                    {collections.map((collection) => {
                         return (
                             <li
                                 className={`slide-item ${
-                                    image.id <= activeIndex
+                                    collection.id <= activeIndex
                                         ? "slide-item--active"
                                         : ""
                                 }`}
-                                key={image.id}
+                                key={collection.id}
                             >
-                                {" "}
-                                <img src={image.source} alt="" />
+                                <img
+                                    src={collection.img.imgSrc}
+                                    alt={collection.img.imgAlt}
+                                />
                             </li>
                         );
                     })}

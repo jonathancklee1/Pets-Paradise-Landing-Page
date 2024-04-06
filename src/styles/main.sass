@@ -33,3 +33,17 @@
     transition: transform 1000ms ease
     &--active
         transform: translateY(0%)
+.slide-item--category
+    position: absolute
+    top: 162px
+    left: 48px
+    z-index: 1
+    font-size: 11px
+    animation: fade-in 3s
+
+@keyframes fade-in
+    from
+        opacity: 0
+
+    to
+        opacity: 100
