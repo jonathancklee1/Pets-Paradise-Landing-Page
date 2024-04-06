@@ -1,0 +1,33 @@
+.footer
+    height: 100%
+    background: white
+    display: grid
+    place-items: center
+    grid-template-columns: 1fr
+    grid-template-rows: 1fr
+    text-transform: uppercase
+    .footer__content, img
+        grid-column: 1/-1
+        grid-row: 1/-1
+
+.footer__content
+    padding: 15%
+
+.social-list,.legal-list
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 16px
+    .social-list-items a,
+    .legal-list-items a
+        text-decoration: none
+        color: black
+        font-size: 10px
+
+.social-list
+    margin-bottom: 56px
+    font-size: 8px
+.newsletter-text
+    margin-bottom: 80px
+    text-align: center
+    font-size: 13px

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Portrait1 from "../assets/portrait_1.jpg";
 import Portrait2 from "../assets/portrait_2.jpg";
 import Portrait3 from "../assets/portrait_3.jpg";
+import Footer from "./Footer";
 
 const Main = () => {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -41,7 +42,7 @@ const Main = () => {
                     console.log("scrolling up");
                     setActiveIndex((prevActiveIndex) => prevActiveIndex - 1);
                 } else if (event.deltaY > 0) {
-                    if (activeIndex === collections.length - 1) return;
+                    if (activeIndex === collections.length) return;
                     console.log("scrolling down");
                     setActiveIndex((prevActiveIndex) => prevActiveIndex + 1);
                 }
@@ -60,12 +61,15 @@ const Main = () => {
     return (
         <>
             <main className="main">
-                <div
-                    className="slide-item--category"
-                    key={collections[activeIndex].id}
-                >
-                    // {collections[activeIndex].collectionName}
-                </div>
+                {collections.length == activeIndex - 1 && (
+                    <div
+                        className="slide-item--category"
+                        key={collections[activeIndex].id}
+                    >
+                        // {collections[activeIndex].collectionName}
+                    </div>
+                )}
+
                 <ul>
                     {collections.map((collection) => {
                         return (
@@ -84,11 +88,20 @@ const Main = () => {
                             </li>
                         );
                     })}
+                    <li
+                        className={`slide-item slide-item__footer ${
+                            activeIndex == collections.length
+                                ? "slide-item--active"
+                                : ""
+                        }`}
+                    >
+                        <Footer />
+                    </li>
                 </ul>
             </main>
-            <footer className="search-footer">
+            <div className="search-footer">
                 <input type="text" placeholder="search" />
-            </footer>
+            </div>
         </>
     );
 };
