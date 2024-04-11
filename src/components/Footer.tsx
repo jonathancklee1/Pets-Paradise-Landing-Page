@@ -22,34 +22,36 @@ const Footer = () => {
             <img src={whiteBg} alt="white bg" />
             <div className="footer__content">
                 <div className="newsletter-text">Join our Newsletter</div>
-                <ul className="social-list">
-                    {socials.map((social) => {
-                        return (
-                            <li
-                                key={social.socialText}
-                                className="social-list-items"
-                            >
-                                <a href={social.socialLink}>
-                                    {social.socialText}
-                                </a>
-                            </li>
-                        );
-                    })}
-                </ul>
-                <ul className="legal-list">
-                    {legalItems.map((legalItem) => {
-                        return (
-                            <li
-                                key={legalItem.legalItemText}
-                                className="legal-list-items"
-                            >
-                                <a href={legalItem.legalItemLink}>
-                                    {legalItem.legalItemText}
-                                </a>
-                            </li>
-                        );
-                    })}
-                </ul>
+                <div>
+                    <ul className="social-list">
+                        {socials.map((social) => {
+                            return (
+                                <li
+                                    key={social.socialText}
+                                    className="social-list-items"
+                                >
+                                    <a href={social.socialLink}>
+                                        {social.socialText}
+                                    </a>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                    <ul className="legal-list">
+                        {legalItems.map((legalItem) => {
+                            return (
+                                <li
+                                    key={legalItem.legalItemText}
+                                    className="legal-list-items"
+                                >
+                                    <a href={legalItem.legalItemLink}>
+                                        {legalItem.legalItemText}
+                                    </a>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </div>
             </div>
         </footer>
     );

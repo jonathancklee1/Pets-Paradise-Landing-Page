@@ -11,7 +11,8 @@ const Main = () => {
         {
             collectionName: "New",
             img: {
-                imgSrc: Portrait1,
+                imgSrcMobile: Portrait1,
+                imgSrc: Portrait2,
                 imgAlt: "image of portrait-1",
             },
             id: 0,
@@ -19,6 +20,7 @@ const Main = () => {
         {
             collectionName: "Coats",
             img: {
+                imgSrcMobile: Portrait2,
                 imgSrc: Portrait2,
                 imgAlt: "image of portrait-2",
             },
@@ -27,7 +29,8 @@ const Main = () => {
         {
             collectionName: "Suits",
             img: {
-                imgSrc: Portrait3,
+                imgSrcMobile: Portrait3,
+                imgSrc: Portrait2,
                 imgAlt: "image of portrait-3",
             },
             id: 2,
@@ -81,10 +84,16 @@ const Main = () => {
                                 }`}
                                 key={collection.id}
                             >
-                                <img
-                                    src={collection.img.imgSrc}
-                                    alt={collection.img.imgAlt}
-                                />
+                                <picture>
+                                    <source
+                                        srcSet={collection.img.imgSrcMobile}
+                                        media="(max-width: 769px)"
+                                    />
+                                    <img
+                                        src={collection.img.imgSrc}
+                                        alt={collection.img.imgAlt}
+                                    />
+                                </picture>
                             </li>
                         );
                     })}
@@ -99,7 +108,7 @@ const Main = () => {
                     </li>
                 </ul>
             </main>
-            <div className="search-footer">
+            <div className="search-footer search-position">
                 <input type="text" placeholder="search" />
             </div>
         </>
