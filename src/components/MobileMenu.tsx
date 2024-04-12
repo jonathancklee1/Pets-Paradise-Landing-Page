@@ -1,5 +1,30 @@
 import xmark from "../assets/xmark-solid.svg";
 const MobileMenu = ({ isOpen, handleToggle }) => {
+    const categoryData = ["Woman", "Man", "Kid", "Perfume"];
+    const extraCategoryData = [
+        "Special edition",
+        "summer collection",
+        "Gift card",
+        "Join Life",
+    ];
+    const subCategoryData = [
+        "// New",
+        "",
+        "The Originals",
+        "",
+        "Woman",
+        "Man",
+        "Kid",
+        "Perfume",
+        "Woman",
+        "Man",
+        "Kid",
+        "Perfume",
+        "Woman",
+        "Man",
+        "Kid",
+        "Perfume",
+    ];
     return (
         <>
             <div className={`mobile-menu ${isOpen && "open"}`}>
@@ -14,27 +39,27 @@ const MobileMenu = ({ isOpen, handleToggle }) => {
                 </div>
                 <div className="menu-category-list__container">
                     <ul className="menu-category-list menu-container">
-                        <li>Woman</li>
-                        <li>Man</li>
-                        <li>Kid</li>
-                        <li>Perfume</li>
+                        {categoryData.map((item) => {
+                            return <li>{item}</li>;
+                        })}
                     </ul>
                 </div>
-
-                <ul className="menu-sub-category-list menu-container">
-                    <li>Woman</li>
-                    <li>Man</li>
-                    <li>Kid</li>
-                    <li>Perfume</li>
-                    <li>Perfume</li>
-                    <li>Perfume</li>
-                    <li>Perfume</li>
-                    <li>Perfume</li>
-                </ul>
-
-                <div className="search-footer">
-                    <input type="text" placeholder="search" />
+                <div className="menu-sub-category__container">
+                    <ul className="menu-sub-category-list menu-container">
+                        {subCategoryData.map((item) => {
+                            return <li>{item}</li>;
+                        })}
+                        <div className="menu-extra-category-list">
+                            {extraCategoryData.map((item) => {
+                                return <div>{item}</div>;
+                            })}
+                        </div>
+                    </ul>
+                    <div className="search-footer">
+                        <input type="text" placeholder="search" />
+                    </div>
                 </div>
+
                 <div className="menu-external-links menu-container">
                     <a>Home</a>
                     <a>My Account</a>
