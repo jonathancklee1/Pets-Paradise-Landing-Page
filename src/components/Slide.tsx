@@ -1,34 +1,43 @@
 import { useEffect, useState } from "react";
 import Footer from "./Footer";
 
-const Slide = ({ slideData }) => {
+const Slide = ({ slideData, isActiveSlide }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isScrolling, setIsScrolling] = useState(false);
 
     useEffect(() => {
-        const onScroll = (event) => {
-            if (isScrolling === false) {
-                if (event.deltaY < 0) {
-                    if (activeIndex === 0) return;
-                    console.log("scrolling up");
-                    setActiveIndex((prevActiveIndex) => prevActiveIndex - 1);
-                } else if (event.deltaY > 0) {
-                    if (activeIndex === slideData.subCategory.length) return;
-                    console.log("scrolling down");
-                    setActiveIndex((prevActiveIndex) => prevActiveIndex + 1);
+        if (isActiveSlide) {
+            const onScroll = (event) => {
+                if (isScrolling === false) {
+                    if (event.deltaY < 0) {
+                        if (activeIndex === 0) return;
+                        console.log("scrolling up");
+                        setActiveIndex(
+                            (prevActiveIndex) => prevActiveIndex - 1
+                        );
+                    } else if (event.deltaY > 0) {
+                        if (activeIndex === slideData.subCategory.length)
+                            return;
+                        console.log("scrolling down");
+                        setActiveIndex(
+                            (prevActiveIndex) => prevActiveIndex + 1
+                        );
+                    }
+                    setIsScrolling(true);
+                    setTimeout(() => {
+                        setIsScrolling((isScrolling) => !isScrolling);
+                    }, 1000);
                 }
-                setIsScrolling(true);
-                setTimeout(() => {
-                    setIsScrolling((isScrolling) => !isScrolling);
-                }, 1000);
-            }
-            console.log(activeIndex);
-        };
-        window.addEventListener("wheel", onScroll);
-        return () => {
-            window.removeEventListener("wheel", onScroll);
-        };
-    }, [activeIndex, isScrolling]);
+                console.log(activeIndex);
+            };
+
+            // Change window to target the active slide so only when active slide you can scroll to change state
+            window.addEventListener("wheel", onScroll);
+            return () => {
+                window.removeEventListener("wheel", onScroll);
+            };
+        }
+    }, [activeIndex, isScrolling, isActiveSlide]);
 
     return (
         <>
@@ -78,5 +87,4 @@ const Slide = ({ slideData }) => {
         </>
     );
 };
-
 export default Slide;

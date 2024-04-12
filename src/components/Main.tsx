@@ -1,8 +1,6 @@
-import { useEffect, useState } from "react";
 import Portrait1 from "../assets/portrait_1.jpg";
 import Portrait2 from "../assets/portrait_2.jpg";
 import Portrait3 from "../assets/portrait_3.jpg";
-import Footer from "./Footer";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -144,15 +142,16 @@ const Main = () => {
     return (
         <>
             <main className="main">
-                <Swiper
-                // onSlideChange={() => {
-                //     setActiveIndex(0);
-                // }}
-                >
+                <Swiper>
                     {mainCategories.map((category, index) => {
                         return (
                             <SwiperSlide key={index}>
-                                <Slide slideData={category}></Slide>
+                                {({ isActive }) => (
+                                    <Slide
+                                        slideData={category}
+                                        isActiveSlide={isActive}
+                                    ></Slide>
+                                )}
                             </SwiperSlide>
                         );
                     })}
