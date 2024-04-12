@@ -31,7 +31,6 @@ const Slide = ({ slideData, isActiveSlide }) => {
                 console.log(activeIndex);
             };
 
-            // Change window to target the active slide so only when active slide you can scroll to change state
             window.addEventListener("wheel", onScroll);
             return () => {
                 window.removeEventListener("wheel", onScroll);
@@ -41,7 +40,7 @@ const Slide = ({ slideData, isActiveSlide }) => {
 
     return (
         <>
-            {slideData.subCategory.length == activeIndex - 1 && (
+            {activeIndex < slideData.subCategory.length && (
                 <div
                     className="slide-item--category"
                     key={slideData.subCategory[activeIndex].id}
