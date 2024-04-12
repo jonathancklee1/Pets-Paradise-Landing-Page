@@ -1,27 +1,40 @@
 import { useEffect, useState } from "react";
 import Footer from "./Footer";
+import { useSwipeable } from "react-swipeable";
 
 const Slide = ({ slideData, isActiveSlide }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isScrolling, setIsScrolling] = useState(false);
+
+    // For mobile vertical swipe
+    const handlers = useSwipeable({
+        onSwipedUp: () => {
+            scrollUp();
+        },
+        onSwipedDown: () => {
+            scrollDown();
+        },
+    });
+
+    function scrollUp() {
+        if (activeIndex === 0) return;
+        console.log("scrolling up");
+        setActiveIndex((prevActiveIndex) => prevActiveIndex - 1);
+    }
+    function scrollDown() {
+        if (activeIndex === slideData.subCategory.length) return;
+        console.log("scrolling down");
+        setActiveIndex((prevActiveIndex) => prevActiveIndex + 1);
+    }
 
     useEffect(() => {
         if (isActiveSlide) {
             const onScroll = (event) => {
                 if (isScrolling === false) {
                     if (event.deltaY < 0) {
-                        if (activeIndex === 0) return;
-                        console.log("scrolling up");
-                        setActiveIndex(
-                            (prevActiveIndex) => prevActiveIndex - 1
-                        );
+                        scrollUp();
                     } else if (event.deltaY > 0) {
-                        if (activeIndex === slideData.subCategory.length)
-                            return;
-                        console.log("scrolling down");
-                        setActiveIndex(
-                            (prevActiveIndex) => prevActiveIndex + 1
-                        );
+                        scrollDown();
                     }
                     setIsScrolling(true);
                     setTimeout(() => {
@@ -30,7 +43,6 @@ const Slide = ({ slideData, isActiveSlide }) => {
                 }
                 console.log(activeIndex);
             };
-
             window.addEventListener("wheel", onScroll);
             return () => {
                 window.removeEventListener("wheel", onScroll);
@@ -49,7 +61,7 @@ const Slide = ({ slideData, isActiveSlide }) => {
                 </div>
             )}
 
-            <ul>
+            <ul {...handlers}>
                 {slideData.subCategory.map((collection) => {
                     return (
                         <li
