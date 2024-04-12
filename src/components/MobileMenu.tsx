@@ -39,19 +39,19 @@ const MobileMenu = ({ isOpen, handleToggle }) => {
                 </div>
                 <div className="menu-category-list__container">
                     <ul className="menu-category-list menu-container">
-                        {categoryData.map((item) => {
-                            return <li>{item}</li>;
+                        {categoryData.map((item, index) => {
+                            return <li key={index}>{item}</li>;
                         })}
                     </ul>
                 </div>
                 <div className="menu-sub-category__container">
                     <ul className="menu-sub-category-list menu-container">
-                        {subCategoryData.map((item) => {
-                            return <li>{item}</li>;
+                        {subCategoryData.map((item, index) => {
+                            return <li key={index}>{item}</li>;
                         })}
                         <div className="menu-extra-category-list">
-                            {extraCategoryData.map((item) => {
-                                return <div>{item}</div>;
+                            {extraCategoryData.map((item, index) => {
+                                return <div key={index}>{item}</div>;
                             })}
                         </div>
                     </ul>
