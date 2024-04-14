@@ -1,12 +1,13 @@
 import Portrait1 from "../assets/portrait_1.jpg";
 import Portrait2 from "../assets/portrait_2.jpg";
 import Portrait3 from "../assets/portrait_3.jpg";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
 import Slide from "./Slide";
-
+import { useEffect, useRef } from "react";
+import SwiperMenu from "./SwiperMenu";
 const Main = () => {
     const mainCategories = [
         {
@@ -138,7 +139,6 @@ const Main = () => {
             ],
         },
     ];
-
     return (
         <>
             <main className="main">
@@ -155,9 +155,22 @@ const Main = () => {
                             </SwiperSlide>
                         );
                     })}
+                    <div className="category-menu">
+                        <ul>
+                            {mainCategories.map((category, index) => {
+                                return (
+                                    <SwiperMenu
+                                        categoryName={category.categoryName}
+                                        index={index}
+                                        key={index}
+                                    ></SwiperMenu>
+                                );
+                            })}
+                        </ul>
+                    </div>
                 </Swiper>
             </main>
-            <div className="search-footer search-position">
+            <div className="search-bar search-position">
                 <input type="text" placeholder="search" />
             </div>
         </>

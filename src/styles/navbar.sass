@@ -9,6 +9,22 @@ header
     left: 0
     right: 0
     z-index: 100
+    .search-bar
+        padding: unset
+        display: none
+        input
+            background: white
+            padding-right: 24px
+            padding-block: 14px
+
+@media (min-width: 768px)
+    header
+        .search-bar
+            display: block
+
+@media (min-width: 768px)
+    header
+        padding: 20px 16px
 .hamburger-button
     background: transparent
     border-style: none
@@ -18,9 +34,26 @@ header
         height: 20px
         width: 20px
 
-.shopping-bag__text
+.shopping-bag__text,
+.login__text,
+.help__text
     font-size: 11px
     white-space: nowrap
+
+.nav--right__list
+    display: flex
+    gap: 24px
+
+.login__text,
+.help__text
+    display: none
+
+@media (min-width: 768px)
+    .login__text,
+    .help__text
+        display: block
+        text-align: right
+        margin-bottom: 16px
 
 .nav--left
     display: flex

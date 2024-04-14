@@ -9,10 +9,10 @@ const Slide = ({ slideData, isActiveSlide }) => {
     // For mobile vertical swipe
     const handlers = useSwipeable({
         onSwipedUp: () => {
-            scrollUp();
+            scrollDown();
         },
         onSwipedDown: () => {
-            scrollDown();
+            scrollUp();
         },
     });
 

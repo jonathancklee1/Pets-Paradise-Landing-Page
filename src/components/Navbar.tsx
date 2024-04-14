@@ -13,7 +13,6 @@ const Navbar = () => {
     }, [isMenuOpen]);
     return (
         <>
-            {" "}
             <header className="header">
                 <div className="nav--left">
                     {/* icon */}
@@ -28,8 +27,17 @@ const Navbar = () => {
                 </div>
 
                 {/* Shopping */}
-                <div>
-                    <ul>
+                <div className="nav--right">
+                    <ul className="nav--right__list">
+                        <li>
+                            <p className="login__text">Login</p>
+                            <div className="search-bar">
+                                <input type="text" placeholder="search" />
+                            </div>
+                        </li>
+                        <li>
+                            <p className="help__text">Help</p>
+                        </li>
                         <li>
                             <p className="shopping-bag__text">
                                 Shopping Bag (0)
