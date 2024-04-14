@@ -1,0 +1,228 @@
+export const mainCategories = [
+    {
+        categoryName: "women",
+        subCategory: [
+            {
+                collectionName: "New",
+                img: {
+                    imgSrcMobile: "portrait_1",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-1",
+                },
+                id: 0,
+            },
+            {
+                collectionName: "Coats",
+                img: {
+                    imgSrcMobile: "portrait_2",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-2",
+                },
+                id: 1,
+            },
+            {
+                collectionName: "Suits",
+                img: {
+                    imgSrcMobile: "portrait_3",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-3",
+                },
+                id: 2,
+            },
+        ],
+        furtherSubCategories: [
+            "// New",
+            "",
+            "The Originals",
+            "",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+        ],
+        extraCategories: [
+            "Special edition",
+            "summer collection",
+            "Gift card",
+            "Join Life",
+        ],
+    },
+    {
+        categoryName: "men",
+        subCategory: [
+            {
+                collectionName: "New",
+                img: {
+                    imgSrcMobile: "portrait_1",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-1",
+                },
+                id: 0,
+            },
+            {
+                collectionName: "Coats",
+                img: {
+                    imgSrcMobile: "portrait_2",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-2",
+                },
+                id: 1,
+            },
+            {
+                collectionName: "Suits",
+                img: {
+                    imgSrcMobile: "portrait_3",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-3",
+                },
+                id: 2,
+            },
+        ],
+        furtherSubCategories: [
+            "// New",
+            "",
+            "The Originals",
+            "",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+        ],
+        extraCategories: [
+            "Special edition",
+            "summer collection",
+            "Gift card",
+            "Join Life",
+        ],
+    },
+    {
+        categoryName: "kids",
+        subCategory: [
+            {
+                collectionName: "New",
+                img: {
+                    imgSrcMobile: "portrait_1",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-1",
+                },
+                id: 0,
+            },
+            {
+                collectionName: "Coats",
+                img: {
+                    imgSrcMobile: "portrait_2",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-2",
+                },
+                id: 1,
+            },
+            {
+                collectionName: "Suits",
+                img: {
+                    imgSrcMobile: "portrait_3",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-3",
+                },
+                id: 2,
+            },
+        ],
+        furtherSubCategories: [
+            "// New",
+            "",
+            "The Originals",
+            "",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+        ],
+        extraCategories: [
+            "Special edition",
+            "summer collection",
+            "Gift card",
+            "Join Life",
+        ],
+    },
+    {
+        categoryName: "perfume",
+        subCategory: [
+            {
+                collectionName: "New",
+                img: {
+                    imgSrcMobile: "portrait_1",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-1",
+                },
+                id: 0,
+            },
+            {
+                collectionName: "Coats",
+                img: {
+                    imgSrcMobile: "portrait_2",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-2",
+                },
+                id: 1,
+            },
+            {
+                collectionName: "Suits",
+                img: {
+                    imgSrcMobile: "portrait_3",
+                    imgSrc: "images/portrait_2",
+                    imgAlt: "image of portrait-3",
+                },
+                id: 2,
+            },
+        ],
+        furtherSubCategories: [
+            "// New",
+            "",
+            "The Originals",
+            "",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+            "Woman",
+            "Man",
+            "Kid",
+            "Perfume",
+        ],
+        extraCategories: [
+            "Special edition",
+            "summer collection",
+            "Gift card",
+            "Join Life",
+        ],
+    },
+];
+
+export default mainCategories;

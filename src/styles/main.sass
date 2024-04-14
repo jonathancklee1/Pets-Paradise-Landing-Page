@@ -85,6 +85,30 @@
 @media (min-width: 769px)
     .category-menu
         display: block
+        left: 120px
+        padding-left: 36px
 
 .active-category
     font-weight: 700
+
+.main
+    .swiper-button-next,
+    .swiper-button-prev,
+    .swiper-button-next::after,
+    .swiper-button-prev::after
+        height: 24px
+        width: 24px
+        font-size: 20px
+        color: black
+        display: none
+
+    .swiper-button-disabled
+        display: none !important
+
+@media (min-width: 769px)
+    .main
+        .swiper-button-next,
+        .swiper-button-prev,
+        .swiper-button-next::after,
+        .swiper-button-prev::after
+            display: block

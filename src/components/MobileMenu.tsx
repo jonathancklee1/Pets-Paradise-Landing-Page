@@ -1,30 +1,13 @@
 import xmark from "../assets/xmark-solid.svg";
+import mainCategories from "../data/MainCategoriesData";
+
 const MobileMenu = ({ isOpen, handleToggle }) => {
-    const categoryData = ["Woman", "Man", "Kid", "Perfume"];
-    const extraCategoryData = [
-        "Special edition",
-        "summer collection",
-        "Gift card",
-        "Join Life",
-    ];
-    const subCategoryData = [
-        "// New",
-        "",
-        "The Originals",
-        "",
-        "Woman",
-        "Man",
-        "Kid",
-        "Perfume",
-        "Woman",
-        "Man",
-        "Kid",
-        "Perfume",
-        "Woman",
-        "Man",
-        "Kid",
-        "Perfume",
-    ];
+    const categoryData = mainCategories.map((category) => {
+        return category.categoryName;
+    });
+
+    const extraCategoryData = mainCategories[0].extraCategories;
+    const subCategoryData = mainCategories[0].furtherSubCategories;
     return (
         <>
             <div className={`mobile-menu ${isOpen && "open"}`}>
@@ -55,7 +38,7 @@ const MobileMenu = ({ isOpen, handleToggle }) => {
                             })}
                         </div>
                     </ul>
-                    <div className="search-footer">
+                    <div className="search-bar">
                         <input type="text" placeholder="search" />
                     </div>
                 </div>

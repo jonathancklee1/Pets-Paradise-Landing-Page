@@ -1,4 +1,3 @@
-import whiteBg from "../assets/white-bg.jpg";
 const Footer = () => {
     const socials = [
         { socialText: "Tiktok", socialLink: "www.google.com" },
@@ -19,7 +18,6 @@ const Footer = () => {
     ];
     return (
         <footer className="footer">
-            <img src={whiteBg} alt="white bg" />
             <div className="footer__content">
                 <div className="newsletter-text">Join our Newsletter</div>
                 <div>

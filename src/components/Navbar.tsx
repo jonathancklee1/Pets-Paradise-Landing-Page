@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import Hamburger from "../assets/hamburger.svg";
+import XMark from "../assets/xmark-solid.svg";
 import Logo from "../assets/logo.svg";
 import MobileMenu from "./MobileMenu";
+import DesktopMenu from "./DesktopMenu";
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,13 +18,24 @@ const Navbar = () => {
             <header className="header">
                 <div className="nav--left">
                     {/* icon */}
-                    <button className="hamburger-button" onClick={toggleMenu}>
-                        <img src={Hamburger} alt="hamburger menu" />
-                    </button>
+                    {!isMenuOpen && (
+                        <button
+                            className="hamburger-button"
+                            onClick={toggleMenu}
+                        >
+                            <img src={Hamburger} alt="hamburger menu" />
+                        </button>
+                    )}
+                    {isMenuOpen && (
+                        <button className="xmark-button" onClick={toggleMenu}>
+                            <img src={XMark} alt="xmark menu" />
+                        </button>
+                    )}
 
                     {/* Logo */}
                     <div className="logo-container">
                         <img src={Logo} alt="logo" />
+                        <DesktopMenu isOpen={isMenuOpen} />
                     </div>
                 </div>
 
