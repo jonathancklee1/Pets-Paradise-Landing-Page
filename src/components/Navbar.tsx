@@ -4,21 +4,30 @@ import XMark from "../assets/xmark-solid.svg";
 import Logo from "../assets/logo.svg";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
+import { useMediaQuery } from "react-responsive";
 
 const Navbar = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isDesktopMenuOpen, setIsDesktopMenuOpen] = useState(false);
+    const isMobile = useMediaQuery({ query: `(max-width: 769px)` });
     function toggleMenu() {
-        setIsMenuOpen((prevIsMenuOpen) => !prevIsMenuOpen);
+        isMobile
+            ? setIsMobileMenuOpen(
+                  (prevIsMobileMenuOpen) => !prevIsMobileMenuOpen
+              )
+            : setIsDesktopMenuOpen(
+                  (prevIsDesktopMenuOpen) => !prevIsDesktopMenuOpen
+              );
     }
     useEffect(() => {
-        console.log(isMenuOpen);
-    }, [isMenuOpen]);
+        console.log(isMobile);
+    }, [isMobile]);
     return (
         <>
             <header className="header">
                 <div className="nav--left">
                     {/* icon */}
-                    {!isMenuOpen && (
+                    {!isMobileMenuOpen && isMobile && (
                         <button
                             className="hamburger-button"
                             onClick={toggleMenu}
@@ -26,7 +35,20 @@ const Navbar = () => {
                             <img src={Hamburger} alt="hamburger menu" />
                         </button>
                     )}
-                    {isMenuOpen && (
+                    {isMobileMenuOpen && isMobile && (
+                        <button className="xmark-button" onClick={toggleMenu}>
+                            <img src={XMark} alt="xmark menu" />
+                        </button>
+                    )}
+                    {!isDesktopMenuOpen && !isMobile && (
+                        <button
+                            className="hamburger-button"
+                            onClick={toggleMenu}
+                        >
+                            <img src={Hamburger} alt="hamburger menu" />
+                        </button>
+                    )}
+                    {isDesktopMenuOpen && !isMobile && (
                         <button className="xmark-button" onClick={toggleMenu}>
                             <img src={XMark} alt="xmark menu" />
                         </button>
@@ -35,7 +57,7 @@ const Navbar = () => {
                     {/* Logo */}
                     <div className="logo-container">
                         <img src={Logo} alt="logo" />
-                        <DesktopMenu isOpen={isMenuOpen} />
+                        <DesktopMenu isOpen={isDesktopMenuOpen} />
                     </div>
                 </div>
 
@@ -59,7 +81,7 @@ const Navbar = () => {
                     </ul>
                 </div>
             </header>
-            <MobileMenu isOpen={isMenuOpen} handleToggle={toggleMenu} />
+            <MobileMenu isOpen={isMobileMenuOpen} handleToggle={toggleMenu} />
         </>
     );
 };

@@ -5,7 +5,7 @@ export const mainCategories = [
             {
                 collectionName: "New",
                 img: {
-                    imgSrcMobile: "portrait_1",
+                    imgSrcMobile: "images/portrait_1",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-1",
                 },
@@ -14,7 +14,7 @@ export const mainCategories = [
             {
                 collectionName: "Coats",
                 img: {
-                    imgSrcMobile: "portrait_2",
+                    imgSrcMobile: "images/portrait_2",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-2",
                 },
@@ -23,7 +23,7 @@ export const mainCategories = [
             {
                 collectionName: "Suits",
                 img: {
-                    imgSrcMobile: "portrait_3",
+                    imgSrcMobile: "images/portrait_3",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-3",
                 },
@@ -61,7 +61,7 @@ export const mainCategories = [
             {
                 collectionName: "New",
                 img: {
-                    imgSrcMobile: "portrait_1",
+                    imgSrcMobile: "images/portrait_1",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-1",
                 },
@@ -70,7 +70,7 @@ export const mainCategories = [
             {
                 collectionName: "Coats",
                 img: {
-                    imgSrcMobile: "portrait_2",
+                    imgSrcMobile: "images/portrait_2",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-2",
                 },
@@ -79,7 +79,7 @@ export const mainCategories = [
             {
                 collectionName: "Suits",
                 img: {
-                    imgSrcMobile: "portrait_3",
+                    imgSrcMobile: "images/portrait_3",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-3",
                 },
@@ -117,7 +117,7 @@ export const mainCategories = [
             {
                 collectionName: "New",
                 img: {
-                    imgSrcMobile: "portrait_1",
+                    imgSrcMobile: "images/portrait_1",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-1",
                 },
@@ -126,7 +126,7 @@ export const mainCategories = [
             {
                 collectionName: "Coats",
                 img: {
-                    imgSrcMobile: "portrait_2",
+                    imgSrcMobile: "images/portrait_2",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-2",
                 },
@@ -135,7 +135,7 @@ export const mainCategories = [
             {
                 collectionName: "Suits",
                 img: {
-                    imgSrcMobile: "portrait_3",
+                    imgSrcMobile: "images/portrait_3",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-3",
                 },
@@ -173,7 +173,7 @@ export const mainCategories = [
             {
                 collectionName: "New",
                 img: {
-                    imgSrcMobile: "portrait_1",
+                    imgSrcMobile: "images/portrait_1",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-1",
                 },
@@ -182,7 +182,7 @@ export const mainCategories = [
             {
                 collectionName: "Coats",
                 img: {
-                    imgSrcMobile: "portrait_2",
+                    imgSrcMobile: "images/portrait_2",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-2",
                 },
@@ -191,7 +191,7 @@ export const mainCategories = [
             {
                 collectionName: "Suits",
                 img: {
-                    imgSrcMobile: "portrait_3",
+                    imgSrcMobile: "images/portrait_3",
                     imgSrc: "images/portrait_2",
                     imgAlt: "image of portrait-3",
                 },
