@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Footer from "./Footer";
 import { useSwipeable } from "react-swipeable";
 
 const Slide = ({ slideData, isActiveSlide }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isScrolling, setIsScrolling] = useState(false);
+    const slideList = useRef();
 
     // For mobile vertical swipe
     const handlers = useSwipeable({
@@ -43,10 +44,12 @@ const Slide = ({ slideData, isActiveSlide }) => {
                 }
                 console.log(activeIndex);
             };
-            window.addEventListener("wheel", onScroll);
-            return () => {
-                window.removeEventListener("wheel", onScroll);
-            };
+            if (slideList && slideList.current) {
+                slideList.current.addEventListener("wheel", onScroll);
+                return () => {
+                    slideList.current?.removeEventListener("wheel", onScroll);
+                };
+            }
         }
     }, [activeIndex, isScrolling, isActiveSlide]);
 
@@ -61,7 +64,7 @@ const Slide = ({ slideData, isActiveSlide }) => {
                 </div>
             )}
 
-            <ul {...handlers}>
+            <ul {...handlers} ref={slideList}>
                 {slideData.subCategory.map((collection) => {
                     return (
                         <li

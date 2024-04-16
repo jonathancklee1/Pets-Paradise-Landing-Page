@@ -43,12 +43,13 @@
         transform: translateY(0%)
 .slide-item--category
     position: absolute
-    top: 162px
+    top: 80px
     left: 48px
     z-index: 1
     font-size: 11px
     animation: fade-in 3s
-
+    text-shadow: var(--text-shadow)
+    font-weight: 700
 @media (min-width: 769px)
     .slide-item--category
         top: initial
@@ -69,12 +70,14 @@
 
 .category-menu
     position: absolute
-    top: 190px
+    top: 100px
     left: 50px
     text-transform: uppercase
     z-index: 102
     display: none
     font-size: 13px
+    text-shadow: var(--text-shadow)
+    font-weight: 500
 
     ul
         display: flex
@@ -90,6 +93,7 @@
 
 .active-category
     font-weight: 700
+    transform: scale(1.2)
 
 .main
     .swiper-button-next,

@@ -1,30 +1,30 @@
 export const mainCategories = [
     {
-        categoryName: "women",
+        categoryName: "dogs",
         subCategory: [
             {
-                collectionName: "New",
+                collectionName: "Corgi",
                 img: {
-                    imgSrcMobile: "images/portrait_1",
-                    imgSrc: "images/portrait_2",
+                    imgSrcMobile: "images/corgi-portrait",
+                    imgSrc: "images/corgi-landscape",
                     imgAlt: "image of portrait-1",
                 },
                 id: 0,
             },
             {
-                collectionName: "Coats",
+                collectionName: "Terrier",
                 img: {
-                    imgSrcMobile: "images/portrait_2",
-                    imgSrc: "images/portrait_2",
+                    imgSrcMobile: "images/terrier-portrait",
+                    imgSrc: "images/terrier-landscape",
                     imgAlt: "image of portrait-2",
                 },
                 id: 1,
             },
             {
-                collectionName: "Suits",
+                collectionName: "Bernese",
                 img: {
-                    imgSrcMobile: "images/portrait_3",
-                    imgSrc: "images/portrait_2",
+                    imgSrcMobile: "images/bernese-portrait",
+                    imgSrc: "images/bernese-landscape",
                     imgAlt: "image of portrait-3",
                 },
                 id: 2,
@@ -56,31 +56,31 @@ export const mainCategories = [
         ],
     },
     {
-        categoryName: "men",
+        categoryName: "Cats",
         subCategory: [
             {
-                collectionName: "New",
+                collectionName: "Tabby",
                 img: {
-                    imgSrcMobile: "images/portrait_1",
-                    imgSrc: "images/portrait_2",
+                    imgSrcMobile: "images/tabby-portrait",
+                    imgSrc: "images/tabby-landscape",
                     imgAlt: "image of portrait-1",
                 },
                 id: 0,
             },
             {
-                collectionName: "Coats",
+                collectionName: "Birman",
                 img: {
-                    imgSrcMobile: "images/portrait_2",
-                    imgSrc: "images/portrait_2",
+                    imgSrcMobile: "images/birman-portrait",
+                    imgSrc: "images/birman-landscape",
                     imgAlt: "image of portrait-2",
                 },
                 id: 1,
             },
             {
-                collectionName: "Suits",
+                collectionName: "Scottish Fold",
                 img: {
-                    imgSrcMobile: "images/portrait_3",
-                    imgSrc: "images/portrait_2",
+                    imgSrcMobile: "images/scottish-portrait",
+                    imgSrc: "images/scottish-landscape",
                     imgAlt: "image of portrait-3",
                 },
                 id: 2,
@@ -112,87 +112,31 @@ export const mainCategories = [
         ],
     },
     {
-        categoryName: "kids",
+        categoryName: "birds",
         subCategory: [
             {
-                collectionName: "New",
+                collectionName: "Canary",
                 img: {
-                    imgSrcMobile: "images/portrait_1",
-                    imgSrc: "images/portrait_2",
+                    imgSrcMobile: "images/canary-portrait",
+                    imgSrc: "images/canary-landscape",
                     imgAlt: "image of portrait-1",
                 },
                 id: 0,
             },
             {
-                collectionName: "Coats",
+                collectionName: "Parrot",
                 img: {
-                    imgSrcMobile: "images/portrait_2",
-                    imgSrc: "images/portrait_2",
+                    imgSrcMobile: "images/parrot-portrait",
+                    imgSrc: "images/parrot-landscape",
                     imgAlt: "image of portrait-2",
                 },
                 id: 1,
             },
             {
-                collectionName: "Suits",
+                collectionName: "Pigeon",
                 img: {
-                    imgSrcMobile: "images/portrait_3",
-                    imgSrc: "images/portrait_2",
-                    imgAlt: "image of portrait-3",
-                },
-                id: 2,
-            },
-        ],
-        furtherSubCategories: [
-            "// New",
-            "",
-            "The Originals",
-            "",
-            "Woman",
-            "Man",
-            "Kid",
-            "Perfume",
-            "Woman",
-            "Man",
-            "Kid",
-            "Perfume",
-            "Woman",
-            "Man",
-            "Kid",
-            "Perfume",
-        ],
-        extraCategories: [
-            "Special edition",
-            "summer collection",
-            "Gift card",
-            "Join Life",
-        ],
-    },
-    {
-        categoryName: "perfume",
-        subCategory: [
-            {
-                collectionName: "New",
-                img: {
-                    imgSrcMobile: "images/portrait_1",
-                    imgSrc: "images/portrait_2",
-                    imgAlt: "image of portrait-1",
-                },
-                id: 0,
-            },
-            {
-                collectionName: "Coats",
-                img: {
-                    imgSrcMobile: "images/portrait_2",
-                    imgSrc: "images/portrait_2",
-                    imgAlt: "image of portrait-2",
-                },
-                id: 1,
-            },
-            {
-                collectionName: "Suits",
-                img: {
-                    imgSrcMobile: "images/portrait_3",
-                    imgSrc: "images/portrait_2",
+                    imgSrcMobile: "images/pigeon-portrait",
+                    imgSrc: "images/pigeon-landscape",
                     imgAlt: "image of portrait-3",
                 },
                 id: 2,

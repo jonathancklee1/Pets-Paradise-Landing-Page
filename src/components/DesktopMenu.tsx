@@ -1,4 +1,4 @@
-import Logo from "../assets/logo.svg";
+import Logo from "/public/images/logo-petsparadise.jpg";
 import SwiperMenu from "./SwiperMenu";
 import mainCategories from "../data/MainCategoriesData";
 import { Swiper } from "swiper/react";

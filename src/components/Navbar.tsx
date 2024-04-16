@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Hamburger from "../assets/hamburger.svg";
 import XMark from "../assets/xmark-solid.svg";
-import Logo from "../assets/logo.svg";
+import Logo from "/public/images/logo-petsparadise.jpg";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
 import { useMediaQuery } from "react-responsive";
