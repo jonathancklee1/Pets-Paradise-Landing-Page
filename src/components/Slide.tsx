@@ -87,12 +87,12 @@ const Slide = ({ slideData, isActiveSlide }: SlideProps) => {
                         >
                             <picture>
                                 <source
-                                    srcSet={`public/${collection.img.imgSrcMobile}.jpg`}
+                                    srcSet={`/${collection.img.imgSrcMobile}.jpg`}
                                     media="(max-width: 769px)"
                                 />
                                 <img
-                                    src={`public/${collection.img.imgSrc}.jpg`}
-                                    alt={`public/${collection.img.imgAlt}.jpg`}
+                                    src={`/${collection.img.imgSrc}.jpg`}
+                                    alt={`/${collection.img.imgAlt}.jpg`}
                                 />
                             </picture>
                         </li>
