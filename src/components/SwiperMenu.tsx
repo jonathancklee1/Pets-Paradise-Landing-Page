@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { useSwiper } from "swiper/react";
-const SwiperMenu = ({ categoryName, index }) => {
+interface SwiperMenuProps {
+    categoryName: string;
+    index: number;
+}
+
+const SwiperMenu = ({ categoryName, index }: SwiperMenuProps) => {
     const swiper = useSwiper();
     const [activeIndex, setActiveIndex] = useState(0);
 

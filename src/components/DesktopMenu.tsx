@@ -2,8 +2,11 @@ import Logo from "/public/images/logo-petsparadise.jpg";
 import SwiperMenu from "./SwiperMenu";
 import mainCategories from "../data/MainCategoriesData";
 import { Swiper } from "swiper/react";
+interface DesktopMenuProps {
+    isOpen: boolean;
+}
 
-const DesktopMenu = ({ isOpen }) => {
+const DesktopMenu = ({ isOpen }: DesktopMenuProps) => {
     const extraCategoryData = mainCategories[0].extraCategories;
     const subCategoryData = mainCategories[0].furtherSubCategories;
     return (

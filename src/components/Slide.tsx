@@ -1,11 +1,25 @@
 import { useEffect, useRef, useState } from "react";
 import Footer from "./Footer";
 import { useSwipeable } from "react-swipeable";
+interface SlideProps {
+    slideData: {
+        subCategory: {
+            collectionName: string;
+            img: {
+                imgSrcMobile: string;
+                imgSrc: string;
+                imgAlt: string;
+            };
+            id: number;
+        }[];
+    };
+    isActiveSlide: boolean;
+}
 
-const Slide = ({ slideData, isActiveSlide }) => {
+const Slide = ({ slideData, isActiveSlide }: SlideProps) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isScrolling, setIsScrolling] = useState(false);
-    const slideList = useRef();
+    const slideList = useRef<HTMLUListElement>(null);
 
     // For mobile vertical swipe
     const handlers = useSwipeable({
@@ -30,7 +44,7 @@ const Slide = ({ slideData, isActiveSlide }) => {
 
     useEffect(() => {
         if (isActiveSlide) {
-            const onScroll = (event) => {
+            const onScroll = (event: WheelEvent) => {
                 if (isScrolling === false) {
                     if (event.deltaY < 0) {
                         scrollUp();

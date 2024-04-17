@@ -1,7 +1,10 @@
 import xmark from "../assets/xmark-solid.svg";
 import mainCategories from "../data/MainCategoriesData";
-
-const MobileMenu = ({ isOpen, handleToggle }) => {
+interface MobileMenuProps {
+    isOpen: boolean;
+    handleToggle: React.MouseEventHandler<HTMLButtonElement>;
+}
+const MobileMenu = ({ isOpen, handleToggle }: MobileMenuProps) => {
     const categoryData = mainCategories.map((category) => {
         return category.categoryName;
     });
