@@ -33,12 +33,9 @@ const Slide = ({ slideData, isActiveSlide }: SlideProps) => {
 
     function scrollUp() {
         if (activeIndex === 0) return;
-        console.log("scrolling up");
         setActiveIndex((prevActiveIndex) => prevActiveIndex - 1);
     }
     function scrollDown() {
-        if (activeIndex === slideData.subCategory.length) return;
-        console.log("scrolling down");
         setActiveIndex((prevActiveIndex) => prevActiveIndex + 1);
     }
 
@@ -56,7 +53,6 @@ const Slide = ({ slideData, isActiveSlide }: SlideProps) => {
                         setIsScrolling((isScrolling) => !isScrolling);
                     }, 1000);
                 }
-                console.log(activeIndex);
             };
             if (slideList && slideList.current) {
                 slideList.current.addEventListener("wheel", onScroll);
@@ -91,12 +87,12 @@ const Slide = ({ slideData, isActiveSlide }: SlideProps) => {
                         >
                             <picture>
                                 <source
-                                    srcSet={`/public/${collection.img.imgSrcMobile}.jpg`}
+                                    srcSet={`public/${collection.img.imgSrcMobile}.jpg`}
                                     media="(max-width: 769px)"
                                 />
                                 <img
-                                    src={`/public/${collection.img.imgSrc}.jpg`}
-                                    alt={`/public/${collection.img.imgAlt}.jpg`}
+                                    src={`public/${collection.img.imgSrc}.jpg`}
+                                    alt={`public/${collection.img.imgAlt}.jpg`}
                                 />
                             </picture>
                         </li>

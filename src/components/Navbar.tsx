@@ -19,9 +19,6 @@ const Navbar = () => {
                   (prevIsDesktopMenuOpen) => !prevIsDesktopMenuOpen
               );
     }
-    useEffect(() => {
-        console.log(isMobile);
-    }, [isMobile]);
     return (
         <>
             <header className="header">
