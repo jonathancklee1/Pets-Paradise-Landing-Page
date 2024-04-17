@@ -1,7 +1,7 @@
 {
     "name": "pets-paradise-landing-page",
     "homepage": "https://jonathancklee1.github.io/Pets-Paradise-Landing-Page",
-    "private": false,
+    "private": true,
     "version": "0.0.0",
     "type": "module",
     "scripts": {
