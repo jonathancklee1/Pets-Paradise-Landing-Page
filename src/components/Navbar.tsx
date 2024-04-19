@@ -29,12 +29,16 @@ const Navbar = () => {
                             className="hamburger-button"
                             onClick={toggleMenu}
                         >
-                            <img src={Hamburger} alt="hamburger menu" />
+                            <img
+                                src={Hamburger}
+                                alt="hamburger menu"
+                                loading="lazy"
+                            />
                         </button>
                     )}
                     {isMobileMenuOpen && isMobile && (
                         <button className="xmark-button" onClick={toggleMenu}>
-                            <img src={XMark} alt="xmark menu" />
+                            <img src={XMark} alt="xmark menu" loading="lazy" />
                         </button>
                     )}
                     {!isDesktopMenuOpen && !isMobile && (
@@ -42,18 +46,22 @@ const Navbar = () => {
                             className="hamburger-button"
                             onClick={toggleMenu}
                         >
-                            <img src={Hamburger} alt="hamburger menu" />
+                            <img
+                                src={Hamburger}
+                                alt="hamburger menu"
+                                loading="lazy"
+                            />
                         </button>
                     )}
                     {isDesktopMenuOpen && !isMobile && (
                         <button className="xmark-button" onClick={toggleMenu}>
-                            <img src={XMark} alt="xmark menu" />
+                            <img src={XMark} alt="xmark menu" loading="lazy" />
                         </button>
                     )}
 
                     {/* Logo */}
                     <div className="logo-container">
-                        <img src={Logo} alt="logo" />
+                        <img src={Logo} alt="logo" loading="lazy" />
                         <DesktopMenu isOpen={isDesktopMenuOpen} />
                     </div>
                 </div>

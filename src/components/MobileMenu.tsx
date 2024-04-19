@@ -19,7 +19,7 @@ const MobileMenu = ({ isOpen, handleToggle }: MobileMenuProps) => {
                         className="menu-close-button"
                         onClick={handleToggle}
                     >
-                        <img src={xmark} alt="close button" />
+                        <img src={xmark} alt="close button" loading="lazy" />
                     </button>
                     <div className="menu-shopping-cart">Shopping Bag (0)</div>
                 </div>

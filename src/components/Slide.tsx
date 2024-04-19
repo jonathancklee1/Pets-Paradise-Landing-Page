@@ -93,6 +93,7 @@ const Slide = ({ slideData, isActiveSlide }: SlideProps) => {
                                 <img
                                     src={`./${collection.img.imgSrc}.jpg`}
                                     alt={`./${collection.img.imgAlt}.jpg`}
+                                    loading="lazy"
                                 />
                             </picture>
                         </li>
